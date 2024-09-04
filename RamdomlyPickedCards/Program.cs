@@ -16,6 +16,17 @@
 
 
             Console.WriteLine(area);
+
+            int[] values = new[] { 0, 12, 44, 36, 92, 54, 13, 8 };
+            IEnumerable<int> result =
+                from v in values
+                where v < 37
+                orderby -v
+                select v;
+
+            foreach (int v in result)
+                Console.Write($"{v} ");
+            Console.ReadLine();
         }
     }
 }
